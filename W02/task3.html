@@ -1,0 +1,31 @@
+<html>
+ <head>
+  <title>w02: task3</title>
+ </head>
+ <body>
+    <input type="button"
+           onclick="e()"
+           value="Calculate the area between three points;(0,7,4),(6,-5,3),(-2,2,9)"/> 
+    <script>
+    function e() { window.alert(AreaOfTriangle(v0,v1,v2));}
+    </script>
+   <script src="vec3.js"></script>
+    <script>
+     var x0 = 0, y0 = 7, z0 = 4;
+     var x1 = 6, y1 = -5, z1 = 3;
+     var x2 = -2, y2 = 2, z2 = 9;
+     var v0 = new Vec3(x0,y0,z0);
+     var v1 = new Vec3(x1,y1,z1);
+     var v2 = new Vec3(x2,y2,z2);
+     function AreaOfTriangle(v0,v1,v2){
+       v0.vector(v1);
+       v0.vector(v2);
+       var a = v1.y*v2.z - v1.z*v2.y;
+       var b = v1.z*v2.x - v1.x*v2.z;
+       var c = v1.x*v2.y - v1.y*v2.x;
+       return Math.sqrt(a*a + b*b + c*c)/2;
+     }
+   //  document.write(AreaOfTriangle(v0,v1,v2));
+    </script>
+ </body>
+</html>
